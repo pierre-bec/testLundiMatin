@@ -109,9 +109,7 @@ document.getElementById("searchbtn").addEventListener("click", function (ev) {
     auth.searchClient(document.getElementById("searchbar").value);
 });
 document.getElementById('cancel').addEventListener("click", clickCancel);
-document.getElementById("edit").addEventListener("click", function (ev) {
-    clickBtnEdit(ev)
-});
+document.getElementById("edit").addEventListener("click", clickBtnEdit);
 document.getElementById('save').addEventListener("click", clickSave);
 
 function afficherClients(clients) {
@@ -137,8 +135,8 @@ function afficherClients(clients) {
             btnDetails.classList.add('btn-small');
             btnDetails.innerHTML = "Voir";
             btnDetails.value = i;
-            btnDetails.addEventListener("click", function (ev) {
-                clickBtnDetails(ev);
+            btnDetails.addEventListener("click", function () {
+                clickBtnDetails(i);
             });
             let icon = document.createElement("i");
             icon.classList.add('material-icons');
@@ -163,20 +161,19 @@ function viderTableau() {
     }
 }
 
-function clickBtnDetails(ev) {
+function clickBtnDetails(i) {
     document.getElementById("recherche").style.display = "none";
     document.getElementById('tableau').style.display = "none";
     document.getElementById('banniere').style.display = "none";
     document.getElementById('banniere-edit').style.display = "block";
-    console.log(ev.target);
-    document.getElementById('nomClient').innerHTML = auth.listeClients[ev.target.value].nom;
-    document.getElementById('nomCli').innerHTML = auth.listeClients[ev.target.value].nom;
-    document.getElementById('telCli').innerHTML = auth.listeClients[ev.target.value].tel;
-    document.getElementById('emailCli').innerHTML = auth.listeClients[ev.target.value].email;
-    document.getElementById('adresseCli').innerHTML = auth.listeClients[ev.target.value].adresse;
-    document.getElementById('codePostalCli').innerHTML = auth.listeClients[ev.target.value].code_postal;
-    document.getElementById('villeCli').innerHTML = auth.listeClients[ev.target.value].ville;
-    document.getElementById("edit").value=ev.target.value;
+    document.getElementById('nomClient').innerHTML = auth.listeClients[i].nom;
+    document.getElementById('nomCli').innerHTML = auth.listeClients[i].nom;
+    document.getElementById('telCli').innerHTML = auth.listeClients[i].tel;
+    document.getElementById('emailCli').innerHTML = auth.listeClients[i].email;
+    document.getElementById('adresseCli').innerHTML = auth.listeClients[i].adresse;
+    document.getElementById('codePostalCli').innerHTML = auth.listeClients[i].code_postal;
+    document.getElementById('villeCli').innerHTML = auth.listeClients[i].ville;
+    document.getElementById("edit").value=i;
     document.getElementById('nomCli').style.display="flex";
     document.getElementById('telCli').style.display="flex";
     document.getElementById('emailCli').style.display="flex";
@@ -186,7 +183,7 @@ function clickBtnDetails(ev) {
 
 }
 
-function clickBtnEdit(ev) {
+function clickBtnEdit() {
     document.getElementById('nomCli').style.display="none";
     document.getElementById('telCli').style.display="none";
     document.getElementById('emailCli').style.display="none";
@@ -195,17 +192,19 @@ function clickBtnEdit(ev) {
     document.getElementById('villeCli').style.display="none";
     document.getElementById("btn-cancel-save").style.display="flex";
     document.getElementById("nom").style.display="flex";
-    document.getElementById("nomI").value=auth.listeClients[ev.target.value].nom;
+    console.log(document.getElementById("edit").value);
+    console.log(auth.listeClients[document.getElementById("edit").value].nom);
+    document.getElementById("nomI").value=auth.listeClients[document.getElementById("edit").value].nom;
     document.getElementById("tel").style.display="flex";
-    document.getElementById("telI").value=auth.listeClients[ev.target.value].tel;
+    document.getElementById("telI").value=auth.listeClients[document.getElementById("edit").value].tel;
     document.getElementById("email").style.display="flex";
-    document.getElementById("emailI").value=auth.listeClients[ev.target.value].email;
+    document.getElementById("emailI").value=auth.listeClients[document.getElementById("edit").value].email;
     document.getElementById("adresse").style.display="flex";
-    document.getElementById("adresseI").value=auth.listeClients[ev.target.value].adresse;
+    document.getElementById("adresseI").value=auth.listeClients[document.getElementById("edit").value].adresse;
     document.getElementById("codePostal").style.display="flex";
-    document.getElementById("codePostalI").value=auth.listeClients[ev.target.value].code_postal;
+    document.getElementById("codePostalI").value=auth.listeClients[document.getElementById("edit").value].code_postal;
     document.getElementById("ville").style.display="flex";
-    document.getElementById("villeI").value=auth.listeClients[ev.target.value].ville;
+    document.getElementById("villeI").value=auth.listeClients[document.getElementById("edit").value].ville;
 }
 
 function clickCancel() {
