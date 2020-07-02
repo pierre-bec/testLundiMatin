@@ -1,0 +1,148 @@
+body {
+    background-color: #1d7d74;
+}
+
+.container {
+    width: 85% !important;
+}
+
+.row  {
+    margin-bottom: 0px !important;
+}
+
+.flex-edit {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    display: flex;
+}
+
+.flex-item {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-search {
+    min-width: 120px;
+    width: 25%;
+    display: flex !important;
+    align-self: flex-end;
+}
+
+section {
+    display: flex !important;
+    margin: 0;
+    border-bottom: solid;
+    border-width: 0.5px;
+    border-color: gray;
+}
+
+.header-table {
+    background-color: #bdbdbd;
+    border-top: solid;
+    border-width: 0.5px;
+    border-color: gray;
+}
+
+.column {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tableauClients {
+    padding: 0 !important;
+}
+
+.search-text {
+    font-weight: bold;
+}
+
+.column .btn-small {
+    border-radius: 20px;
+}
+
+i.left {
+    margin-right: 7px !important;
+}
+
+#banniere-edit {
+    display: none;
+}
+
+.nom-edit {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nomClient {
+    font-size: x-large;
+}
+.tab-info {
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    display: block;
+    border-width: 0.5px;
+    border-color: gray;
+    width: 100%;
+    opacity: 0.3;
+}
+
+#infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+.ligne {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ligne div,input {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.ligne div:first-child {
+text-align: right;
+    padding-right: 14px;
+    border-right: solid;
+    border-width: 0.5px;
+    border-color: gray;
+
+}
+
+.ligne div,input {
+    margin-left: 15px;
+}
+.ligne input {
+    max-width: 200px;
+}
+
+#btn-cancel-save {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px;
+    display: none;
+}
+
+#btn-cancel-save a:first-child {
+    margin-right: 5px;
+}
+
+.ligne div:last-child {
+    display: none;
+}

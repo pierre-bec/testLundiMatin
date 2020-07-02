@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TestLundiMatin</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/materialize.css">
+    <link rel="stylesheet" href="src/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div  class="row">
+        <div id="banniere" class="col s12 m12">
+            <div class="card white ">
+                <div class="card-content black-text">
+                    <span class=" flow-text card-title">Recherche d'une fiche de contact</span>
+                </div>
+            </div>
+        </div>
+        <div id="recherche" class="col s12 m12">
+            <div class="card white ">
+                <div class="card-content black-text">
+                    <div class="row flex-center">
+                        <div class="flex-item">
+                            <p class="search-text">Renseignez un nom ou une dénomination</p>
+                            <input id="searchbar" placeholder="Nom ou dénomination" id="first_name" type="text"
+                                   class="validate search">
+                            <label for="first_name"></label>
+                            <a id="searchbtn" class="btn-search waves-effect waves-light btn">Rechercher</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tableau" class="col s12 m12">
+            <div class="card white ">
+                <div id="tableauClients" class="card-content black-text">
+                    <section class="header-table">
+                        <div class="column ">Nom</div>
+                        <div class="column ">Adresse</div>
+                        <div class="column ">Ville</div>
+                        <div class="column ">Téléphone</div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    <div id="banniere-edit">
+        <div class="col s12">
+            <div class="card white ">
+                <div  class="card-content black-text nom-edit">
+                    <div id="nomClient" ></div>
+                    <a  id="edit" class="waves-effect waves-light btn-small"><i class="small material-icons">settings</i>Editer</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="card white ">
+                <div  class="tab-info card-content black-text nom-edit">
+                    <p>EDITION</p>
+                    <hr>
+                    <div id="infos">
+                        <div class="ligne">
+                            <div class="right">Prénom & NOM</div>
+                            <div id="nomCli"></div>
+                            <div id="nom"><label for="nomI"></label><input placeholder="" id="nomI" type="text" class="validate search"></div>
+                        </div>
+                        <div class="ligne">
+                            <div>Téléphone</div>
+                            <div id="telCli"></div>
+                            <div id="tel"><label for="telI"></label><input placeholder="" id="telI" type="text" class="validate search"></div>
+                        </div>
+                        <div class="ligne">
+                            <div>Email</div>
+                            <div id="emailCli"></div>
+                            <div id="email"><label for="emailI"></label><input placeholder="" id="emailI" type="text" class="validate search"></div>
+                        </div>
+                        <div class="ligne">
+                            <div>Adresse</div>
+                            <div id="adresseCli"></div>
+                            <div id="adresse"><label for="adresseI"></label><input placeholder="" id="adresseI" type="text" class="validate search"></div>
+                        </div>
+                        <div class="ligne">
+                            <div>Code Postal</div>
+                            <div id="codePostalCli"></div>
+                            <div id="codePostal"><label for="codePostalI"></label><input placeholder="" id="codePostalI" type="text" class="validate search"></div>
+                        </div>
+                        <div class="ligne">
+                            <div>Ville</div>
+                            <div id="villeCli"></div>
+                            <div id="ville"><label for="villeI"></label><input placeholder="" id="villeI" type="text" class="validate search"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="btn-cancel-save">
+                        <a id="cancel" class="waves-effect waves-light btn-small white black-text">Annuler</a>
+                        <a id="save" class="waves-effect waves-light btn-small">Enregistrer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script type="text/javascript" src="src/js/materialize.min.js"></script>
+<script type="text/javascript" src="src/js/auth.js"></script>
+</body>
+</html>
